@@ -54,7 +54,7 @@
           <div class="flex flex-col sm:flex-row justify-between items-start gap-4">
             <div class="flex items-center space-x-2">
                 <InitialsLetters class="h-10 w-10"
-                  full-name="appointment.userName"
+                  :full-name="appointment.userName"
                 />
               <div>
                 <h3 class="text-lg font-semibold text-gray-900">{{ appointment.userName }}</h3>
