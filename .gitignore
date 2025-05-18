@@ -1,0 +1,29 @@
+node_modules/
+npm-debug.log*
+yarn-error.log
+dist/                   # carpeta de build de Vite
+.vitepress/dist/        # build estático de VitePress (si lo usas)
+.env                    # variables de entorno
+.env.*.local            # otros .env locales
+
+# IDE/editor
+.idea/
+*.iml
+.vscode/
+*.sw?
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Archivos de cobertura de tests
+coverage/
+*.lcov
+
+# Otros artefactos
+*.tmp
+*.temp
