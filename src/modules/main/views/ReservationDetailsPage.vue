@@ -7,7 +7,9 @@
 
           <!-- Estado de carga -->
           <div v-if="loading" class="text-center py-8">
-            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
+            <div
+              class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"
+            ></div>
             <p class="mt-4 text-gray-600">Procesando reserva...</p>
           </div>
 
@@ -17,25 +19,31 @@
               <div>
                 <h3 class="text-lg font-medium text-gray-900 mb-2">Servicio</h3>
                 <p class="text-gray-600">{{ selectedService?.description }}</p>
-                <p class="text-sm text-gray-500 mt-1">Duración: {{ selectedService?.duration }} minutos</p>
+                <p class="text-sm text-gray-500 mt-1">
+                  Duración: {{ selectedService?.duration }} minutos
+                </p>
               </div>
 
               <div>
                 <h3 class="text-lg font-medium text-gray-900 mb-2">Fecha y Hora</h3>
-                <p class="text-gray-600">{{ formatDate(selectedDate) }}</p>
+                <p class="text-gray-600">{{ formatDate(formatToDDMMYYYY(selectedDate)) }}</p>
                 <p class="text-gray-600">{{ selectedTime }}</p>
               </div>
             </div>
 
             <div class="border-t border-gray-200 pt-6">
               <div class="flex justify-between">
-                <button @click="router.push('/datetime')"
-                  class="px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">
+                <button
+                  @click="router.push('/datetime')"
+                  class="px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50"
+                >
                   Volver
                 </button>
-                <button @click="confirmReservation"
+                <button
+                  @click="confirmReservation"
                   class="px-6 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors"
-                  :disabled="loading">
+                  :disabled="loading"
+                >
                   Confirmar Reserva
                 </button>
               </div>
@@ -54,7 +62,7 @@ import { createAppointment } from '../actions/appointments.actions';
 import { useAuthStore } from '@/modules/auth/stores/auth.store';
 import type { Service } from '../interfaces';
 import { useToast } from 'vue-toastification';
-import { formatDate } from '../utils/dateUtils';
+import { formatDate, formatToDDMMYYYY } from '@/modules/main/utils/dateUtils';
 
 // Utilidad para mostrar notificaciones
 const toast = useToast();
@@ -132,7 +140,7 @@ const confirmReservation = async () => {
       date: formattedDate,
       time: selectedTime.value,
       serviceId: selectedService.value.id,
-      status: 'confirmed'
+      status: 'confirmed',
     });
 
     toast.success('Reserva confirmada con éxito');

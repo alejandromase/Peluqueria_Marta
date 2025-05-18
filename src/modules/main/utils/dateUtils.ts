@@ -29,6 +29,18 @@ export const formatDate = (dateStr: string): string => {
 };
 
 /**
+ * Utilidad para transformar YYYY-MM-DD a DD-MM-YYYY
+ * @param dateStr Fecha en formato YYYY-MM-DD
+ * @returns Fecha en formato DD-MM-YYYY
+ */
+export const formatToDDMMYYYY = (dateStr: string): string => {
+  if (!dateStr) return '';
+  const [year, month, day] = dateStr.split('-');
+  if (!year || !month || !day) return dateStr;
+  return `${day}-${month}-${year}`;
+};
+
+/**
  * Convierte una hora en formato string a minutos
  * @param time Hora en formato HH:mm
  * @returns Número total de minutos
