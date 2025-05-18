@@ -1,0 +1,59 @@
+{
+  "name": "@vuese/cli",
+  "version": "2.14.3",
+  "description": "Automatically generate markdown documents based on your vue file",
+  "keywords": [
+    "markdown",
+    "vue",
+    "generator",
+    "document",
+    "docute"
+  ],
+  "author": "HcySunYang <HcySunYang@outlook.com>",
+  "homepage": "https://github.com/vuese/vuese/tree/master/packages/cli#readme",
+  "license": "MIT",
+  "bin": {
+    "vuese": "bin/index.js"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuese/vuese.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vuese/vuese/issues"
+  },
+  "buildOptions": {
+    "extractDts": false
+  },
+  "devDependencies": {
+    "@types/marked": "^1.2.0",
+    "@types/puppeteer-core": "^2.0.0"
+  },
+  "dependencies": {
+    "@vuese/markdown-render": "^2.11.3",
+    "@vuese/parser": "^2.10.3",
+    "cac": "^6.4.0",
+    "chokidar": "^2.0.4",
+    "chrome-launcher": "^0.13.4",
+    "envinfo": "^7.3.1",
+    "fast-glob": "^2.2.6",
+    "fs-extra": "^7.0.1",
+    "get-port": "^4.1.0",
+    "joycon": "^2.2.3",
+    "log-horizon": "^0.1.2",
+    "marked": "^0.7.0",
+    "open": "^6.4.0",
+    "prismjs": "^1.15.0",
+    "puppeteer-core": "^5.5.0",
+    "sao": "^0.22.17",
+    "serve-handler": "^5.0.7"
+  },
+  "gitHead": "1b024b4ee5b2eaa2f4cfdc96689f52bd316724ff"
+}
